@@ -1,0 +1,19 @@
+{
+  "_comment": "Used only when apiUrl in js/config.js is empty (local preview). The live site reads the Google Sheet.",
+  "pianos": [
+    {
+      "id": "conservatory",
+      "name": "Conservatory of Flowers",
+      "open": true,
+      "status": "Open unless rain is forecast",
+      "combination": "NOTE"
+    },
+    {
+      "id": "blue-heron",
+      "name": "Blue Heron Lake",
+      "open": false,
+      "status": "Closed for repair",
+      "combination": "NOTE"
+    }
+  ]
+}

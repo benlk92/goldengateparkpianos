@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Golden Gate Park Pianos</title>
+  <meta name="description" content="Two public pianos in Golden Gate Park, free for anyone to play. Check today's status and get the lock code.">
+  <meta property="og:title" content="Golden Gate Park Pianos">
+  <meta property="og:description" content="Two public pianos in Golden Gate Park, free for anyone to play.">
+  <meta property="og:image" content="https://goldengateparkpianos.com/img/conservatory.jpg">
+  <meta name="theme-color" content="#f6c624">
+  <link rel="icon" href="img/icon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="home">
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="./">
+        <img class="brand-mark" src="img/icon.svg" alt="">
+        Golden Gate Park Pianos
+      </a>
+      <a class="header-link" data-whatsapp href="#">WhatsApp ↗</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="wrap">
+        <h1>Play a piano in the park.</h1>
+        <p class="lede">Free for anyone. Lock it up when you're done.</p>
+        <div class="pianos" id="piano-list" aria-live="polite">
+          <div class="piano skeleton" aria-hidden="true"></div>
+          <div class="piano skeleton" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="band">
+          <h2>Problem with a piano? Want to help?</h2>
+          <a class="btn btn-primary" data-whatsapp href="#">Join the WhatsApp</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Get the Lock Code · Golden Gate Park Pianos</title>
+  <meta name="description" content="Get the combination for the public piano locks in Golden Gate Park.">
+  <meta name="theme-color" content="#f6c624">
+  <link rel="icon" href="../img/icon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="access">
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../">
+        <img class="brand-mark" src="../img/icon.svg" alt="">
+        Golden Gate Park Pianos
+      </a>
+      <a class="header-link" href="../">← Status</a>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="wrap narrow">
+      <h1>Get the code</h1>
+
+      <form class="card form" id="access-form" novalidate>
+        <div class="field-grid">
+          <div class="field">
+            <label for="firstName">First name</label>
+            <input class="input" id="firstName" name="firstName" autocomplete="given-name" required>
+          </div>
+          <div class="field">
+            <label for="lastName">Last name</label>
+            <input class="input" id="lastName" name="lastName" autocomplete="family-name" required>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input class="input" id="email" name="email" type="email" autocomplete="email" inputmode="email" required>
+          </div>
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input class="input" id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required>
+          </div>
+        </div>
+
+        <div class="pledge">
+          <label class="pledge-promise" for="dry">Only play when it's dry. Fog and dew make the keys stick.</label>
+          <input class="input" id="dry" name="dry" placeholder="Type DRY to agree" autocomplete="off" autocapitalize="characters" spellcheck="false" required>
+        </div>
+
+        <div class="pledge">
+          <label class="pledge-promise" for="locked">Lock it up when you're done to keep out surprise rain and overnight dew.</label>
+          <input class="input" id="locked" name="locked" placeholder="Type LOCKED to agree" autocomplete="off" autocapitalize="characters" spellcheck="false" required>
+        </div>
+
+        <div class="hp" aria-hidden="true">
+          <label for="website">Leave this empty</label>
+          <input id="website" name="website" tabindex="-1" autocomplete="off">
+        </div>
+
+        <div class="stack">
+          <p class="form-error" id="form-error" role="alert"></p>
+          <button class="btn btn-green btn-block" type="submit">Get the code</button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <script src="../js/config.js"></script>
+  <script src="../js/app.js"></script>
+</body>
+</html>
