@@ -37,6 +37,8 @@ Open the sheet in the Google Sheets app → **Pianos** tab:
 
 Changes show up on the site immediately.
 
+The home page shows the pianos instantly as **open** (or as each visitor last saw them), then updates a few seconds later once the sheet answers. If you add, rename or remove a piano in the sheet, also update `defaultPianos` in `site/js/config.js`.
+
 ## Local preview
 
 With `apiUrl` empty, the site uses the sample data in `site/data/preview.json`, and submissions aren't saved.

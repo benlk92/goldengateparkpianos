@@ -5,6 +5,7 @@
   const BASE = CONFIG.base;
   const PREVIEW = !CONFIG.apiUrl;
   const STORAGE_KEY = "ggpp-code";
+  const STATUS_KEY = "ggpp-status";
 
   // ---------- Helpers ----------
 
@@ -79,7 +80,7 @@
       : el("span", { class: "btn btn-block", "aria-disabled": "true", text: "Closed" });
 
     return el("article", { class: "piano" + (piano.open ? "" : " is-closed") }, [
-      el("div", { class: "piano-photo" }, el("img", { src: photoFor(piano), alt: "The " + piano.name + " piano", loading: "lazy" })),
+      el("div", { class: "piano-photo" }, el("img", { src: photoFor(piano), alt: "The " + piano.name + " piano" })),
       el("div", { class: "piano-body" }, [
         el("span", { class: "pill " + (piano.open ? "pill-open" : "pill-closed"), text: piano.open ? "Open" : "Closed" }),
         el("h3", { text: piano.name }),
@@ -89,15 +90,28 @@
     ]);
   }
 
+  // The sheet takes a few seconds to answer, so draw the cards right away
+  // from this visitor's last known status (or the defaults in config.js),
+  // then redraw when the real status arrives.
+  function readCachedPianos() {
+    try { return JSON.parse(localStorage.getItem(STATUS_KEY)); } catch (e) { return null; }
+  }
+
+  function writeCachedPianos(pianos) {
+    try { localStorage.setItem(STATUS_KEY, JSON.stringify(pianos)); } catch (e) { /* ignore */ }
+  }
+
   async function initHome() {
     const list = document.getElementById("piano-list");
+    const draw = (pianos) => list.replaceChildren(...pianos.map(pianoCard));
+
+    draw(readCachedPianos() || CONFIG.defaultPianos);
     try {
       const pianos = await loadPianos();
-      list.replaceChildren(...pianos.map(pianoCard));
+      writeCachedPianos(pianos);
+      draw(pianos);
     } catch (err) {
-      list.replaceChildren(el("div", { class: "card" }, [
-        el("p", { text: "Couldn't load the pianos. Refresh to try again." })
-      ]));
+      // Keep showing what we drew; the form double-checks with the sheet.
     }
   }
 

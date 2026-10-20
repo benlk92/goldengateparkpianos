@@ -17,5 +17,11 @@ window.PIANO_CONFIG = {
     "conservatory": SITE_BASE + "img/conservatory.jpg",
     "blue-heron": SITE_BASE + "img/blue-heron.jpg"
   },
-  defaultPhoto: SITE_BASE + "img/conservatory.jpg"
+  defaultPhoto: SITE_BASE + "img/conservatory.jpg",
+
+  // Shown instantly while the live status loads from the sheet.
+  defaultPianos: [
+    { id: "conservatory", name: "Conservatory of Flowers", open: true, status: "Open unless rain is forecast" },
+    { id: "blue-heron", name: "Blue Heron Lake", open: true, status: "Open unless rain is forecast" }
+  ]
 };
